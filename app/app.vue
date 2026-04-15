@@ -1,6 +1,13 @@
+<script setup lang="ts">
+const { loading } = useLoader();
+</script>
+
 <template>
   <div>
     <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <AppLoader :visible="loading" />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
