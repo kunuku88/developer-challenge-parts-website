@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-serif: system-ui, sans-serif;
+
+    --color-primary-50: oklch(97% 0.012 255);
+    --color-primary-100: oklch(93% 0.035 255);
+    --color-primary-200: oklch(87% 0.065 255);
+    --color-primary-300: oklch(78% 0.11 255);
+    --color-primary-400: oklch(65% 0.15 255);
+    --color-primary-500: oklch(55% 0.18 255);
+    --color-primary-600: oklch(47% 0.19 255);
+    --color-primary-700: oklch(40% 0.18 255);
+    --color-primary-800: oklch(34% 0.15 255);
+    --color-primary-900: oklch(28% 0.12 255);
+
+    --color-accent-400: oklch(82% 0.18 75);
+    --color-accent-500: oklch(75% 0.19 75);
+    --color-accent-600: oklch(67% 0.2 75);
+}
+
+/* A11y CSS custom properties */
+:root {
+    --a11y-font-scale: 1;
+}
+
+html {
+    font-size: calc(var(--a11y-font-scale) * 16px);
+    font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: system-ui, sans-serif;
+}
+
+/* High contrast mode */
+html.high-contrast {
+    --tw-bg-opacity: 1;
+    filter: contrast(1.4);
+}
+
+/* Reduced motion */
+html.reduced-motion *,
+html.reduced-motion *::before,
+html.reduced-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+}
+
+/* Page transitions */
+.page-enter-active,
+.page-leave-active {
+    transition:
+        opacity 0.18s ease,
+        transform 0.18s ease;
+}
+
+.page-enter-from {
+    opacity: 0;
+    transform: translateY(6px);
+}
+
+.page-leave-to {
+    opacity: 0;
+    transform: translateY(-6px);
+}
+
+/* Skip-to-content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #1d4ed8;
+    color: white;
+    padding: 8px 16px;
+    z-index: 9999;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Focus visible ring */
+:focus-visible {
+    outline: 2px solid oklch(55% 0.18 255);
+    outline-offset: 2px;
+}
+
+/* Scrollbar styling */
+.custom-scrollbar::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 3px;
+}
