@@ -2,11 +2,18 @@
 
 ## Solution
 
-The solution is on the `shaldi-basworld-partsfinder` branch:
+The solution for this assignment is available on the `shaldi-basworld-partsfinder` branch of this repository.
+
+### 1. Clone the repository and switch to the solution branch
 
 ```bash
+git clone https://github.com/kunuku88/developer-challenge-parts-website.git
+cd developer-challenge-parts-website
 git checkout shaldi-basworld-partsfinder
 ```
+After checking out the branch, follow the instructions in the README.md file to run the project.
+
+url: https://github.com/kunuku88/developer-challenge-parts-website/tree/shaldi-basworld-partsfinder
 
 ## Goal
 
