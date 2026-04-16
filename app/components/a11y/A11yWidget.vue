@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Accessibility } from 'lucide-vue-next'
+import { Accessibility, X } from 'lucide-vue-next'
 
 const { prefs, setFontSize, toggleHighContrast, toggleReducedMotion } = useA11y()
 
@@ -64,20 +64,7 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
                     aria-label="Close accessibility settings"
                     @click="close"
                 >
-                    <svg
-                        class="size-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12"
-                        />
-                    </svg>
+                    <X class="size-4" aria-hidden="true" />
                 </UButton>
             </div>
 

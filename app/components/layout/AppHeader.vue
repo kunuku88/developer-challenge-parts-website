@@ -61,20 +61,7 @@ function isActive(to: string) {
                     class="relative rounded-md p-2 text-[#1C1C1A] hover:bg-[#F5F5F5] focus-visible:ring-2 focus-visible:ring-[#1DA05E] focus-visible:outline-none"
                     :aria-label="`Go to quote list, ${itemCount} item${itemCount !== 1 ? 's' : ''}`"
                 >
-                    <svg
-                        class="size-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                        />
-                    </svg>
+                    <ClipboardList class="size-6" aria-hidden="true" />
                     <span
                         v-if="itemCount > 0"
                         aria-hidden="true"

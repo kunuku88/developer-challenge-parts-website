@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ClipboardList } from 'lucide-vue-next'
+import { ClipboardList, X } from 'lucide-vue-next'
 
 definePageMeta({ title: 'My Quote — BAS World' })
 
@@ -158,20 +158,7 @@ useHead({ title: 'My Quote — BAS World' })
                                     :aria-label="`Remove ${item.part.name} from quote`"
                                     @click="store.removeItem(item.part.id)"
                                 >
-                                    <svg
-                                        class="size-4"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        aria-hidden="true"
-                                    >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M6 18L18 6M6 6l12 12"
-                                        />
-                                    </svg>
+                                    <X class="size-4" aria-hidden="true" />
                                 </UButton>
                             </td>
                         </tr>
