@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import type { Part } from '#shared/types'
 import { ArrowLeftRight } from 'lucide-vue-next'
+
+import type { Part } from '#shared/types'
 
 const props = defineProps<{ part: Part }>()
 

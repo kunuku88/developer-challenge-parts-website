@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Truck, Check, Accessibility } from 'lucide-vue-next'
+import { Accessibility,Check, Truck } from 'lucide-vue-next'
 
 definePageMeta({ layout: 'auth' })
 

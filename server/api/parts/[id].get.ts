@@ -1,5 +1,6 @@
-import partsData from '../../data/parts.json'
 import type { Part } from '#shared/types'
+
+import partsData from '../../data/parts.json'
 
 export default defineEventHandler((event) => {
   const id = getRouterParam(event, 'id')

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Search, ClipboardList, Scale, Settings2 } from 'lucide-vue-next'
+import { ClipboardList, Scale, Search, Settings2 } from 'lucide-vue-next'
 
 const route = useRoute()
 const quoteStore = useQuoteStore()

@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { SearchX,TriangleAlert } from 'lucide-vue-next'
+
 import type { Part } from '#shared/types'
-import { TriangleAlert, SearchX } from 'lucide-vue-next'
 
 defineProps<{
     parts: Part[]

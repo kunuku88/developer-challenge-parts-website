@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import type { Part } from '#shared/types'
 import { Scale } from 'lucide-vue-next'
+
+import type { Part } from '#shared/types'
 
 const compStore = useComparisonStore()
 const quoteStore = useQuoteStore()

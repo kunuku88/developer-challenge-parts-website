@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import type { Part } from '#shared/types'
 import { PackageSearch } from 'lucide-vue-next'
+
+import type { Part } from '#shared/types'
 
 const route = useRoute()
 const id = computed(() => String(route.params['id']))

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ChevronDown, Check } from 'lucide-vue-next'
+import { Check,ChevronDown } from 'lucide-vue-next'
 import { useId } from 'vue'
 
 interface SelectOption {
@@ -91,8 +91,8 @@ onUnmounted(() => document.removeEventListener('mousedown', onMousedown))
         </label>
 
         <UButton
-            variant="unstyled"
             :id="triggerId"
+            variant="unstyled"
             :disabled="disabled"
             :aria-expanded="open"
             aria-haspopup="listbox"
