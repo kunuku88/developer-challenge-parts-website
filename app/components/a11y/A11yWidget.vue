@@ -33,15 +33,16 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
 
 <template>
     <div class="fixed right-6 bottom-6 z-50">
-        <button
+        <UButton
             v-if="!isOpen"
+            variant="unstyled"
             class="flex size-12 items-center justify-center rounded-full bg-[#1DA05E] text-white shadow-lg hover:bg-[#116037] focus-visible:ring-2 focus-visible:ring-[#1DA05E] focus-visible:ring-offset-2 focus-visible:outline-none"
             aria-label="Open accessibility settings"
             aria-haspopup="dialog"
             @click.stop="open"
         >
             <Accessibility class="size-6" aria-hidden="true" />
-        </button>
+        </UButton>
 
         <div
             v-if="isOpen"
@@ -57,7 +58,8 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
                 <h2 id="a11y-widget-title" class="text-sm font-semibold text-[#1C1C1A]">
                     Accessibility
                 </h2>
-                <button
+                <UButton
+                    variant="unstyled"
                     class="rounded p-1 text-[#B5B5B5] hover:bg-[#F5F5F5] focus-visible:ring-2 focus-visible:ring-[#1DA05E] focus-visible:outline-none"
                     aria-label="Close accessibility settings"
                     @click="close"
@@ -76,15 +78,16 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
                             d="M6 18L18 6M6 6l12 12"
                         />
                     </svg>
-                </button>
+                </UButton>
             </div>
 
             <div class="mb-3">
                 <p class="mb-1.5 text-xs font-medium text-[#1C1C1A]">Font size</p>
                 <div class="flex gap-1" role="group" aria-label="Font size options">
-                    <button
+                    <UButton
                         v-for="size in ['default', 'large', 'x-large'] as const"
                         :key="size"
+                        variant="unstyled"
                         :aria-pressed="prefs.fontSize === size"
                         :class="[
                             'flex-1 rounded px-2 py-1.5 text-xs font-medium capitalize transition',
@@ -95,13 +98,14 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
                         @click="setFontSize(size)"
                     >
                         {{ size === 'default' ? 'A' : size === 'large' ? 'A+' : 'A++' }}
-                    </button>
+                    </UButton>
                 </div>
             </div>
 
             <div class="mb-3 flex items-center justify-between">
                 <label class="text-xs font-medium text-[#1C1C1A]">High contrast</label>
-                <button
+                <UButton
+                    variant="unstyled"
                     role="switch"
                     :aria-checked="prefs.highContrast"
                     :aria-label="`High contrast: ${prefs.highContrast ? 'on' : 'off'}`"
@@ -117,12 +121,13 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
                             prefs.highContrast ? 'translate-x-4' : 'translate-x-0.5',
                         ]"
                     />
-                </button>
+                </UButton>
             </div>
 
             <div class="flex items-center justify-between">
                 <label class="text-xs font-medium text-[#1C1C1A]">Reduced motion</label>
-                <button
+                <UButton
+                    variant="unstyled"
                     role="switch"
                     :aria-checked="prefs.reducedMotion"
                     :aria-label="`Reduced motion: ${prefs.reducedMotion ? 'on' : 'off'}`"
@@ -138,7 +143,7 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
                             prefs.reducedMotion ? 'translate-x-4' : 'translate-x-0.5',
                         ]"
                     />
-                </button>
+                </UButton>
             </div>
         </div>
     </div>

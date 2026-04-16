@@ -49,7 +49,8 @@ const conditionVariant = {
                 />
             </NuxtLink>
 
-            <button
+            <UButton
+                variant="unstyled"
                 :aria-label="`${inCompare ? 'Remove from' : 'Add to'} comparison: ${part.name}`"
                 :aria-pressed="inCompare"
                 :disabled="compareFull"
@@ -63,7 +64,7 @@ const conditionVariant = {
                 @click.prevent="toggleCompare"
             >
                 <ArrowLeftRight class="size-4" aria-hidden="true" />
-            </button>
+            </UButton>
         </div>
 
         <div class="flex flex-1 flex-col gap-2 p-4">

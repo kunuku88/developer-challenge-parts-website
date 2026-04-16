@@ -14,9 +14,10 @@ function select(color: string) {
     <div>
         <p class="mb-1.5 text-sm font-medium text-[#1C1C1A]">Available colours</p>
         <div role="listbox" aria-label="Select colour" class="flex flex-wrap gap-2">
-            <button
+            <UButton
                 v-for="color in colors"
                 :key="color"
+                variant="unstyled"
                 role="option"
                 :aria-selected="selected === color"
                 :aria-label="color"

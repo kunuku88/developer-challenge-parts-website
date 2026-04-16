@@ -24,9 +24,13 @@ const { data: parts } = await useAsyncData(
             <h2 id="recently-viewed-heading" class="text-sm font-semibold text-[#1C1C1A]">
                 Recently Viewed
             </h2>
-            <button class="text-xs text-[#B5B5B5] hover:text-[#1C1C1A]" @click="clearHistory">
+            <UButton
+                variant="unstyled"
+                class="text-xs text-[#B5B5B5] hover:text-[#1C1C1A]"
+                @click="clearHistory"
+            >
                 Clear history
-            </button>
+            </UButton>
         </div>
         <div class="custom-scrollbar flex gap-3 overflow-x-auto pb-2">
             <NuxtLink

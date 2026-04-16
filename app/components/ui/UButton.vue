@@ -1,10 +1,13 @@
 <script setup lang="ts">
+type StyledVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger'
+
 interface Props {
-    variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger'
+    variant?: StyledVariant | 'unstyled'
     size?: 'sm' | 'md' | 'lg'
     loading?: boolean
     disabled?: boolean
     type?: 'button' | 'submit' | 'reset'
+    to?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -15,7 +18,7 @@ const props = withDefaults(defineProps<Props>(), {
     type: 'button',
 })
 
-const variantClasses: Record<NonNullable<Props['variant']>, string> = {
+const variantClasses: Record<StyledVariant, string> = {
     primary:
         'bg-[#1DA05E] text-white hover:bg-[#116037] active:bg-[#116037] focus-visible:ring-[#1DA05E]',
     secondary:
@@ -33,21 +36,31 @@ const sizeClasses: Record<NonNullable<Props['size']>, string> = {
 }
 
 const isDisabled = computed(() => props.disabled || props.loading)
+const tag = computed(() => (props.to ? resolveComponent('NuxtLink') : 'button'))
+const isUnstyled = computed(() => props.variant === 'unstyled')
 </script>
 
 <template>
-    <button
-        :type="type"
-        :disabled="isDisabled"
-        :aria-disabled="isDisabled"
-        :aria-busy="loading"
-        :class="[
-            'inline-flex items-center justify-center rounded-md font-medium transition-colors',
-            'focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
-            variantClasses[variant],
-            sizeClasses[size],
-            isDisabled ? 'pointer-events-none cursor-not-allowed opacity-50' : 'cursor-pointer',
-        ]"
+    <component
+        :is="tag"
+        :to="to"
+        :type="!to ? type : undefined"
+        :disabled="!to ? isDisabled : undefined"
+        :aria-disabled="isDisabled || undefined"
+        :aria-busy="loading || undefined"
+        :class="
+            !isUnstyled
+                ? [
+                      'inline-flex items-center justify-center rounded-md font-medium transition-colors',
+                      'focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none',
+                      variantClasses[variant as StyledVariant],
+                      sizeClasses[size],
+                      isDisabled
+                          ? 'pointer-events-none cursor-not-allowed opacity-50'
+                          : 'cursor-pointer',
+                  ]
+                : undefined
+        "
     >
         <span
             v-if="loading"
@@ -55,5 +68,5 @@ const isDisabled = computed(() => props.disabled || props.loading)
             class="size-4 animate-spin rounded-full border-2 border-current border-t-transparent"
         />
         <slot />
-    </button>
+    </component>
 </template>

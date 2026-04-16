@@ -153,22 +153,24 @@ const conditionVariant = { new: 'success', used: 'warning', refurbished: 'info' 
                         role="group"
                         aria-label="Quantity"
                     >
-                        <button
+                        <UButton
+                            variant="unstyled"
                             class="px-3 py-2 text-[#1C1C1A] hover:bg-[#F5F5F5] disabled:opacity-40"
                             aria-label="Decrease quantity"
                             :disabled="quantity <= 1"
                             @click="quantity--"
                         >
                             −
-                        </button>
+                        </UButton>
                         <span class="w-10 text-center text-sm">{{ quantity }}</span>
-                        <button
+                        <UButton
+                            variant="unstyled"
                             class="px-3 py-2 text-[#1C1C1A] hover:bg-[#F5F5F5]"
                             aria-label="Increase quantity"
                             @click="quantity++"
                         >
                             +
-                        </button>
+                        </UButton>
                     </div>
 
                     <UButton

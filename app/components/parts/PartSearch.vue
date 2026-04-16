@@ -34,8 +34,9 @@ function clearSearch() {
             class="w-full rounded-lg border border-[#B5B5B5] bg-white py-2.5 pr-10 pl-10 text-sm focus:border-[#1DA05E] focus:ring-2 focus:ring-[#1DA05E] focus:outline-none"
             aria-label="Search parts by name or OEM number"
         />
-        <button
+        <UButton
             v-if="search"
+            variant="unstyled"
             class="absolute inset-y-0 right-3 flex items-center text-[#B5B5B5] hover:text-[#1C1C1A]"
             aria-label="Clear search"
             @click="clearSearch"
@@ -54,6 +55,6 @@ function clearSearch() {
                     d="M6 18L18 6M6 6l12 12"
                 />
             </svg>
-        </button>
+        </UButton>
     </div>
 </template>

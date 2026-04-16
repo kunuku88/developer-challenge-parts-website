@@ -46,7 +46,7 @@ function isActive(to: string) {
                     :class="[
                         'flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium transition-colors',
                         isActive(item.to)
-                            ? 'bg-[#F5F5F5] text-[#1DA05E]'
+                            ? 'pointer-events-none bg-[#F5F5F5] text-[#1DA05E]'
                             : 'text-[#1C1C1A] hover:bg-[#F5F5F5] hover:text-[#1C1C1A]',
                     ]"
                 >
@@ -88,12 +88,13 @@ function isActive(to: string) {
                     <span class="hidden text-sm text-[#1C1C1A] sm:block">{{
                         authStore.user?.name
                     }}</span>
-                    <button
+                    <UButton
+                        variant="unstyled"
                         class="rounded-md px-3 py-1.5 text-sm text-[#B5B5B5] hover:bg-[#F5F5F5]"
                         @click="logout()"
                     >
                         Logout
-                    </button>
+                    </UButton>
                 </template>
                 <NuxtLink
                     v-else

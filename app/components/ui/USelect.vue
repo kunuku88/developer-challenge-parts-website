@@ -90,9 +90,9 @@ onUnmounted(() => document.removeEventListener('mousedown', onMousedown))
             {{ label }}
         </label>
 
-        <button
+        <UButton
+            variant="unstyled"
             :id="triggerId"
-            type="button"
             :disabled="disabled"
             :aria-expanded="open"
             aria-haspopup="listbox"
@@ -117,7 +117,7 @@ onUnmounted(() => document.removeEventListener('mousedown', onMousedown))
                 ]"
                 aria-hidden="true"
             />
-        </button>
+        </UButton>
 
         <Transition
             enter-active-class="transition duration-100 ease-out"

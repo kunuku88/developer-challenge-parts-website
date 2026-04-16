@@ -95,7 +95,8 @@ function handleKeydown(event: KeyboardEvent) {
                         <h2 id="modal-title" class="text-lg font-semibold text-[#1C1C1A]">
                             {{ title }}
                         </h2>
-                        <button
+                        <UButton
+                            variant="unstyled"
                             class="rounded-md p-1 text-[#B5B5B5] hover:bg-[#F5F5F5] hover:text-[#1C1C1A] focus-visible:ring-2 focus-visible:ring-[#1DA05E] focus-visible:outline-none"
                             aria-label="Close dialog"
                             @click="emit('close')"
@@ -110,7 +111,7 @@ function handleKeydown(event: KeyboardEvent) {
                                     d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"
                                 />
                             </svg>
-                        </button>
+                        </UButton>
                     </div>
                     <div class="p-6">
                         <slot />

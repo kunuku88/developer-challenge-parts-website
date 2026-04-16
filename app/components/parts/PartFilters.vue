@@ -37,13 +37,14 @@ const hasFilters = computed(() => brands.value.length > 0 || !!condition.value |
     <aside aria-label="Filter parts" class="space-y-5">
         <div class="flex items-center justify-between">
             <h2 class="text-sm font-semibold text-[#1C1C1A]">Filters</h2>
-            <button
+            <UButton
                 v-if="hasFilters"
+                variant="unstyled"
                 class="text-xs text-[#1DA05E] hover:underline"
                 @click="emit('clear')"
             >
                 Clear all
-            </button>
+            </UButton>
         </div>
 
         <fieldset>

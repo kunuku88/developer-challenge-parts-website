@@ -24,13 +24,14 @@ const count = computed(() => compStore.selectedParts.length)
                     >
                         View
                     </NuxtLink>
-                    <button
+                    <UButton
+                        variant="unstyled"
                         class="text-white/60 hover:text-white"
                         aria-label="Clear comparison selection"
                         @click="compStore.clearComparison()"
                     >
                         ✕
-                    </button>
+                    </UButton>
                 </div>
             </div>
         </Transition>

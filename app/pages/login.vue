@@ -184,8 +184,8 @@ async function handleSubmit() {
                                 :disabled="loading"
                                 class="w-full rounded-lg border-2 border-[#B5B5B5] bg-white py-3.5 pr-12 pl-12 text-base text-[#1C1C1A] transition-all duration-300 outline-none placeholder:text-[#B5B5B5] focus:border-[#1DA05E] focus:bg-white focus:shadow-[0_0_0_4px_rgba(29,160,94,0.1)] disabled:cursor-not-allowed disabled:opacity-60"
                             />
-                            <button
-                                type="button"
+                            <UButton
+                                variant="unstyled"
                                 class="absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer border-none bg-transparent p-1 opacity-50 transition-opacity duration-300 hover:opacity-100"
                                 aria-label="Wachtwoord tonen/verbergen"
                                 @click="showPassword = !showPassword"
@@ -204,7 +204,7 @@ async function handleSubmit() {
                                         d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 0 0 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"
                                     />
                                 </svg>
-                            </button>
+                            </UButton>
                         </div>
                     </div>
 
@@ -231,13 +231,14 @@ async function handleSubmit() {
                         </a>
                     </div>
 
-                    <button
+                    <UButton
+                        variant="unstyled"
                         type="submit"
                         :disabled="loading"
                         class="mt-2 w-full cursor-pointer rounded-lg border-2 border-[#1DA05E] bg-[#1DA05E] px-8 py-4 font-bold tracking-[0.05em] text-white uppercase transition-all duration-300 hover:-translate-y-0.5 hover:border-[#116037] hover:bg-[#116037] hover:shadow-[0_4px_12px_rgba(29,160,94,0.3)] active:translate-y-0 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-70"
                     >
                         {{ loading ? 'Bezig...' : 'Inloggen' }}
-                    </button>
+                    </UButton>
                 </form>
 
                 <div class="my-6 flex items-center gap-4">
@@ -247,8 +248,8 @@ async function handleSubmit() {
                 </div>
 
                 <div class="flex flex-col gap-3">
-                    <button
-                        type="button"
+                    <UButton
+                        variant="unstyled"
                         class="flex w-full cursor-pointer items-center justify-center gap-3 rounded-lg border-2 border-[#B5B5B5] bg-white px-6 py-3.5 text-[0.9375rem] font-semibold text-[#1C1C1A] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1DA05E] hover:bg-[#F5F5F5] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
                     >
                         <svg
@@ -274,10 +275,10 @@ async function handleSubmit() {
                             />
                         </svg>
                         Doorgaan met Google
-                    </button>
+                    </UButton>
 
-                    <button
-                        type="button"
+                    <UButton
+                        variant="unstyled"
                         class="flex w-full cursor-pointer items-center justify-center gap-3 rounded-lg border-2 border-[#B5B5B5] bg-white px-6 py-3.5 text-[0.9375rem] font-semibold text-[#1C1C1A] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1DA05E] hover:bg-[#F5F5F5] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
                     >
                         <svg
@@ -291,7 +292,7 @@ async function handleSubmit() {
                             />
                         </svg>
                         Doorgaan met GitHub
-                    </button>
+                    </UButton>
                 </div>
             </div>
         </div>

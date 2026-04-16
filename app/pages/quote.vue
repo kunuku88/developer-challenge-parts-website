@@ -26,12 +26,7 @@ useHead({ title: 'My Quote — BAS World' })
         >
             <ClipboardList class="size-12 text-[#B5B5B5]" aria-hidden="true" />
             <p class="text-lg font-medium text-[#1C1C1A]">Your quote list is empty</p>
-            <NuxtLink
-                to="/"
-                class="rounded-lg bg-[#1DA05E] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#116037]"
-            >
-                Browse Parts
-            </NuxtLink>
+            <UButton to="/" variant="primary" size="md">Browse Parts</UButton>
         </div>
 
         <template v-else>
@@ -126,7 +121,8 @@ useHead({ title: 'My Quote — BAS World' })
                                     role="group"
                                     :aria-label="`Quantity for ${item.part.name}`"
                                 >
-                                    <button
+                                    <UButton
+                                        variant="unstyled"
                                         class="px-2 py-1 text-[#1C1C1A] hover:bg-[#F5F5F5] disabled:opacity-40"
                                         aria-label="Decrease quantity"
                                         :disabled="item.quantity <= 1"
@@ -135,9 +131,10 @@ useHead({ title: 'My Quote — BAS World' })
                                         "
                                     >
                                         −
-                                    </button>
+                                    </UButton>
                                     <span class="w-8 text-center">{{ item.quantity }}</span>
-                                    <button
+                                    <UButton
+                                        variant="unstyled"
                                         class="px-2 py-1 text-[#1C1C1A] hover:bg-[#F5F5F5]"
                                         aria-label="Increase quantity"
                                         @click="
@@ -145,7 +142,7 @@ useHead({ title: 'My Quote — BAS World' })
                                         "
                                     >
                                         +
-                                    </button>
+                                    </UButton>
                                 </div>
                             </td>
                             <td class="px-4 py-3 text-right text-[#1C1C1A]">
@@ -155,7 +152,8 @@ useHead({ title: 'My Quote — BAS World' })
                                 €{{ (item.part.price * item.quantity).toFixed(2) }}
                             </td>
                             <td class="px-4 py-3">
-                                <button
+                                <UButton
+                                    variant="unstyled"
                                     class="rounded p-1.5 text-[#B5B5B5] hover:bg-red-50 hover:text-red-600"
                                     :aria-label="`Remove ${item.part.name} from quote`"
                                     @click="store.removeItem(item.part.id)"
@@ -174,7 +172,7 @@ useHead({ title: 'My Quote — BAS World' })
                                             d="M6 18L18 6M6 6l12 12"
                                         />
                                     </svg>
-                                </button>
+                                </UButton>
                             </td>
                         </tr>
                     </tbody>
@@ -201,12 +199,7 @@ useHead({ title: 'My Quote — BAS World' })
                 </UButton>
                 <div class="flex gap-2">
                     <QuoteExportPdf />
-                    <NuxtLink
-                        to="/"
-                        class="rounded-lg border border-[#B5B5B5] px-4 py-2 text-sm font-medium text-[#1C1C1A] hover:bg-[#F5F5F5]"
-                    >
-                        Add More Parts
-                    </NuxtLink>
+                    <UButton to="/" variant="secondary" size="md">Add More Parts</UButton>
                 </div>
             </div>
         </template>

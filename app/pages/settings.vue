@@ -67,8 +67,9 @@ const autoOpenDrawer = ref(false)
                     <label for="high-contrast" class="text-sm font-medium text-[#1C1C1A]">
                         High contrast mode
                     </label>
-                    <button
+                    <UButton
                         id="high-contrast"
+                        variant="unstyled"
                         role="switch"
                         :aria-checked="prefs.highContrast"
                         :class="[
@@ -83,15 +84,16 @@ const autoOpenDrawer = ref(false)
                                 prefs.highContrast ? 'translate-x-6' : 'translate-x-1',
                             ]"
                         />
-                    </button>
+                    </UButton>
                 </div>
 
                 <div class="flex items-center justify-between">
                     <label for="reduced-motion" class="text-sm font-medium text-[#1C1C1A]">
                         Reduced motion
                     </label>
-                    <button
+                    <UButton
                         id="reduced-motion"
+                        variant="unstyled"
                         role="switch"
                         :aria-checked="prefs.reducedMotion"
                         :class="[
@@ -106,7 +108,7 @@ const autoOpenDrawer = ref(false)
                                 prefs.reducedMotion ? 'translate-x-6' : 'translate-x-1',
                             ]"
                         />
-                    </button>
+                    </UButton>
                 </div>
             </div>
         </UCard>
@@ -134,8 +136,9 @@ const autoOpenDrawer = ref(false)
                     <label for="auto-drawer" class="text-sm font-medium text-[#1C1C1A]">
                         Auto-open quote drawer when adding
                     </label>
-                    <button
+                    <UButton
                         id="auto-drawer"
+                        variant="unstyled"
                         role="switch"
                         :aria-checked="autoOpenDrawer"
                         :class="[
@@ -150,7 +153,7 @@ const autoOpenDrawer = ref(false)
                                 autoOpenDrawer ? 'translate-x-6' : 'translate-x-1',
                             ]"
                         />
-                    </button>
+                    </UButton>
                 </div>
             </div>
         </UCard>
