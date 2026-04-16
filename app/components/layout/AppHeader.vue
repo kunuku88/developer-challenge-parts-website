@@ -6,8 +6,6 @@ const quoteStore = useQuoteStore()
 const authStore = useAuthStore()
 const { logout } = useAuth()
 
-const quoteDrawerOpen = useState<boolean>('quote-drawer-open', () => false)
-
 const itemCount = computed(() => quoteStore.itemCount)
 
 const navItems = [
@@ -58,10 +56,10 @@ function isActive(to: string) {
             </nav>
 
             <div class="ml-auto flex items-center gap-2">
-                <button
+                <NuxtLink
+                    to="/quote"
                     class="relative rounded-md p-2 text-[#1C1C1A] hover:bg-[#F5F5F5] focus-visible:ring-2 focus-visible:ring-[#1DA05E] focus-visible:outline-none"
-                    :aria-label="`Open quote list, ${itemCount} item${itemCount !== 1 ? 's' : ''}`"
-                    @click="quoteDrawerOpen = true"
+                    :aria-label="`Go to quote list, ${itemCount} item${itemCount !== 1 ? 's' : ''}`"
                 >
                     <svg
                         class="size-6"
@@ -84,7 +82,7 @@ function isActive(to: string) {
                     >
                         {{ itemCount }}
                     </span>
-                </button>
+                </NuxtLink>
 
                 <template v-if="authStore.isAuthenticated">
                     <span class="hidden text-sm text-[#1C1C1A] sm:block">{{

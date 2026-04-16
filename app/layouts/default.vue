@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { A11yPreferences } from '#shared/types'
 
-const isOpen = useState<boolean>('quote-drawer-open', () => false)
-
 const { loading, start, stop } = useLoader()
 const nuxtApp = useNuxtApp()
 nuxtApp.hook('page:start', () => {
@@ -47,7 +45,6 @@ watch(a11yPrefs, (prefs) => applyA11yPrefs(prefs), { deep: true })
         <main id="main-content" class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8" tabindex="-1">
             <slot />
         </main>
-        <QuoteDrawer :open="isOpen" @close="isOpen = false" />
         <A11yWidget />
     </div>
 </template>
