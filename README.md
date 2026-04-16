@@ -1,5 +1,13 @@
 # Parts Finder — Technical Assignment
 
+## Solution
+
+The solution is on the `shaldi-basworld-partsfinder` branch:
+
+```bash
+git checkout shaldi-basworld-partsfinder
+```
+
 ## Goal
 
 Build a mini **Parts Finder** application that allows a mechanic or workshop to quickly locate the right part and compile a quote list — modelled after a B2B workflow rather than a traditional e-commerce checkout.
