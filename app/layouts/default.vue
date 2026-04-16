@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { A11yPreferences } from '#shared/types/a11y'
+import type { A11yPreferences } from '#shared/types'
 
 const isOpen = useState<boolean>('quote-drawer-open', () => false)
 
