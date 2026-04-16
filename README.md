@@ -7,7 +7,7 @@ The solution for this assignment is available on the `shaldi-basworld-partsfinde
 ### 1. Clone the repository and switch to the solution branch
 
 ```bash
-git clone https://github.com/kunuku88/developer-challenge-parts-website.git
+git clone git@github.com:kunuku88/developer-challenge-parts-website.git
 cd developer-challenge-parts-website
 git checkout shaldi-basworld-partsfinder
 ```
