@@ -57,7 +57,5 @@ useHead({ title: 'Browse Parts — BAS World' })
                 <PartGrid :parts="parts" :error="errorMsg" @retry="refresh()" />
             </div>
         </div>
-
-        <PartComparison />
     </div>
 </template>
