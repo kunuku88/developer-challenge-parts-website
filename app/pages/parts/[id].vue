@@ -194,7 +194,7 @@ const conditionVariant = { new: 'success', used: 'warning', refurbished: 'info' 
                                 : compStore.addToCompare(part)
                         "
                     >
-                        {{ inCompare ? '⚖️ Comparing' : '⚖️ Compare' }}
+                        {{ inCompare ? '⚖️ Added to comparison' : '⚖️ Add to Compare' }}
                     </UButton>
                 </div>
             </div>

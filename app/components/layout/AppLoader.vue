@@ -59,7 +59,6 @@ defineProps<{ visible: boolean }>()
     }
 }
 
-/* Overlay fade */
 .loader-enter-active {
     transition: opacity 0.1s ease;
 }

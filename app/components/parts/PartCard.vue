@@ -8,7 +8,7 @@ const props = defineProps<{ part: Part }>()
 const quoteStore = useQuoteStore()
 const compStore = useComparisonStore()
 
-const inQuote = computed(() => quoteStore.items.some((i) => i.part.id === props.part.id))
+const inQuote = computed(() => quoteStore.items.some((item) => item.part.id === props.part.id))
 const inCompare = computed(() => compStore.isSelected(props.part.id))
 const compareFull = computed(() => compStore.isFull && !inCompare.value)
 
