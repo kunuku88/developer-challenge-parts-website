@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Accessibility,Check, Truck } from 'lucide-vue-next'
+import { Accessibility, Check, Truck } from 'lucide-vue-next'
 
 definePageMeta({ layout: 'auth' })
 
@@ -232,14 +232,6 @@ async function handleSubmit() {
                     >
                         <IconGoogle class="h-5 w-5 shrink-0" />
                         Doorgaan met Google
-                    </UButton>
-
-                    <UButton
-                        variant="unstyled"
-                        class="flex w-full cursor-pointer items-center justify-center gap-3 rounded-lg border-2 border-[#B5B5B5] bg-white px-6 py-3.5 text-[0.9375rem] font-semibold text-[#1C1C1A] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#1DA05E] hover:bg-[#F5F5F5] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
-                    >
-                        <IconGithub class="h-5 w-5 shrink-0" />
-                        Doorgaan met GitHub
                     </UButton>
                 </div>
             </div>

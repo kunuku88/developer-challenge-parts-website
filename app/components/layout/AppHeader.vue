@@ -83,13 +83,6 @@ function isActive(to: string) {
                         Logout
                     </UButton>
                 </template>
-                <NuxtLink
-                    v-else
-                    to="/login"
-                    class="rounded-md bg-[#1DA05E] px-3 py-1.5 text-sm font-medium text-white hover:bg-[#116037]"
-                >
-                    Login
-                </NuxtLink>
             </div>
         </div>
 

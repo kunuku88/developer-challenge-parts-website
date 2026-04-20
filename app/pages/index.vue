@@ -19,7 +19,7 @@ const { start: startLoader, stop: stopLoader } = useLoader()
 watch(
     isLoading,
     (val) => {
-        if (val) startLoader(5000)
+        if (val) startLoader(1000)
         else stopLoader()
     },
     { immediate: true },
