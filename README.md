@@ -18,12 +18,41 @@ Internal parts catalogue for BAS World mechanics and workshop managers. Search, 
 
 ---
 
+## Package manager
+
+This project uses **pnpm** (pinned in `package.json` via the `packageManager` field). All scripts in this README use pnpm, but you can use npm or yarn if you prefer — just substitute the commands accordingly.
+
+**Installing pnpm (if not already available)**
+
+Install it globally so you can use `pnpm` directly:
+
+```bash
+npm install -g pnpm
+```
+
+Alternatively, if you prefer not to install globally, you can run all commands via `npx`:
+
+```bash
+npx pnpm install
+npx pnpm dev
+# etc.
+```
+
+Or use corepack (ships with Node.js 16.9+):
+
+```bash
+corepack enable
+# pnpm is now available — no separate install needed
+```
+
+---
+
 ## Getting started
 
 ```bash
-pnpm install
-pnpm exec playwright install   # download browser binaries (first time only)
-pnpm dev                       # http://localhost:3000
+(p)npm install
+(p)npm exec playwright install   # download browser binaries (first time only)
+(p)npm dev                       # http://localhost:3000
 ```
 
 **Demo credentials**
@@ -40,35 +69,35 @@ pnpm dev                       # http://localhost:3000
 ### Development
 
 ```bash
-pnpm dev          # start dev server
-pnpm build        # production build
-pnpm preview      # preview production build
-pnpm typecheck    # run TypeScript checks
+(p)npm dev          # start dev server
+(p)npm build        # production build
+(p)npm preview      # preview production build
+(p)npm typecheck    # run TypeScript checks
 ```
 
 ### Code quality
 
 ```bash
-pnpm lint          # check for lint errors
-pnpm lint:fix      # auto-fix lint errors
-pnpm format        # format all files with Prettier
-pnpm format:check  # check formatting without writing
+(p)npm lint          # check for lint errors
+(p)npm lint:fix      # auto-fix lint errors
+(p)npm format        # format all files with Prettier
+(p)npm format:check  # check formatting without writing
 ```
 
 ### Testing
 
 ```bash
 # Unit tests (Vitest)
-pnpm test:unit            # watch mode — reruns on file changes
-pnpm exec vitest run      # single run & exit
-pnpm test:unit:ui         # interactive browser UI (http://localhost:51204)
-pnpm exec vitest run --coverage   # with coverage report
+(p)npm test:unit            # watch mode — reruns on file changes
+(p)npm exec vitest run      # single run & exit
+(p)npm test:unit:ui         # interactive browser UI (http://localhost:51204)
+(p)npm exec vitest run --coverage   # with coverage report
 
 # E2E tests (Playwright) — requires dev server or starts it automatically
-pnpm test:e2e             # headless
-pnpm test:e2e:ui          # interactive Playwright UI
-pnpm exec playwright test --headed              # watch browser
-pnpm exec playwright test tests/e2e/auth.spec.ts  # single file
+(p)npm test:e2e             # headless
+(p)npm test:e2e:ui          # interactive Playwright UI
+(p)npm exec playwright test --headed              # watch browser
+(p)npm exec playwright test tests/e2e/auth.spec.ts  # single file
 ```
 
 ---
