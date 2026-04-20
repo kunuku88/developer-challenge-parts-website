@@ -17,12 +17,12 @@ function close() {
     isOpen.value = false
 }
 
-function handleKeydown(e: KeyboardEvent) {
-    if (e.key === 'Escape') close()
+function handleKeydown(event: KeyboardEvent) {
+    if (event.key === 'Escape') close()
 }
 
-function handleClickOutside(e: MouseEvent) {
-    if (panelRef.value && !panelRef.value.contains(e.target as Node)) {
+function handleClickOutside(event: MouseEvent) {
+    if (panelRef.value && !panelRef.value.contains(event.target as Node)) {
         close()
     }
 }
@@ -32,7 +32,7 @@ onUnmounted(() => document.removeEventListener('click', handleClickOutside))
 </script>
 
 <template>
-    <div class="fixed right-6 bottom-6 z-50">
+    <div class="fixed right-15 bottom-15 z-50">
         <UButton
             v-if="!isOpen"
             variant="unstyled"

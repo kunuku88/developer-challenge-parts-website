@@ -9,7 +9,7 @@ const count = computed(() => compStore.selectedParts.length)
         <Transition name="slide-up">
             <div
                 v-if="count >= 2"
-                class="fixed bottom-4 left-1/2 z-40 -translate-x-1/2"
+                class="fixed bottom-15 left-1/2 z-40 -translate-x-1/2"
                 role="status"
                 aria-live="polite"
                 :aria-label="`${count} parts selected for comparison`"
