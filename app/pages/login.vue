@@ -76,8 +76,8 @@ async function handleSubmit() {
         await login(email.value, password.value)
         await router.push('/')
     } catch {
+        loading.value = false
         error.value = 'Invalid credentials. Please try again.'
-        stopLoader()
     }
 }
 </script>
@@ -119,6 +119,7 @@ async function handleSubmit() {
 
                 <div
                     v-if="error"
+                    role="alert"
                     class="mb-4 rounded-md border-l-4 border-red-600 bg-red-50 px-4 py-3"
                 >
                     <p class="m-0 text-[0.9375rem] font-medium text-red-600">{{ error }}</p>
@@ -175,7 +176,7 @@ async function handleSubmit() {
                             <UButton
                                 variant="unstyled"
                                 class="absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer border-none bg-transparent p-1 opacity-50 transition-opacity duration-300 hover:opacity-100"
-                                aria-label="Wachtwoord tonen/verbergen"
+                                aria-label="Toon of verberg wachtwoord"
                                 @click="showPassword = !showPassword"
                             >
                                 <IconEye
