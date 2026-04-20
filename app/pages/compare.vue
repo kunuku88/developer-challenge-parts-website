@@ -69,6 +69,15 @@ const rows: Array<{ label: string; key: keyof (typeof parts.value)[number] }> = 
                                         class="h-24 w-full rounded object-cover"
                                     />
                                     <p class="font-semibold text-[#1C1C1A]">{{ part.name }}</p>
+                                    <UButton
+                                        size="sm"
+                                        variant="ghost"
+                                        :aria-label="`Remove ${part.name} from comparison`"
+                                        class="border-1 border-red-300"
+                                        @click="compStore.removeFromCompare(part.id)"
+                                    >
+                                        ✕ Remove
+                                    </UButton>
                                     <p
                                         :class="[
                                             'text-lg font-bold',
